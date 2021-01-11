@@ -1,10 +1,11 @@
-//Complete the method/function so that it converts dash/underscore delimited words into camel casing.
-//The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
-//toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
-//toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
-function toCamelCase(str) {
-  var regExp = /[-_]\w/gi;
-  return str.replace(regExp, function (match) {
-    return match.charAt(1).toUpperCase();
-  });
+//In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+//If anything in the text isn't a letter, ignore it and don't return it.
+//"a" = 1, "b" = 2, etc.
+//alphabetPosition("The sunset sets at twelve o' clock.")
+function alphabetPosition(text) {
+  return text
+    .toUpperCase()
+    .match(/[a-z]/gi)
+    .map((c) => c.charCodeAt() - 64)
+    .join(" ");
 }
