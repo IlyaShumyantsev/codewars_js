@@ -1,10 +1,9 @@
-//Complete the method/function so that it converts dash/underscore delimited words into camel casing.
-//The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
-//toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
-//toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
-function toCamelCase(str) {
-  var regExp = /[-_]\w/gi;
-  return str.replace(regExp, function (match) {
-    return match.charAt(1).toUpperCase();
-  });
+// Clock shows h hours, m minutes and s seconds after midnight.
+// Your task is to write a function which returns the time since midnight in milliseconds.
+function past(h, m, s) {
+  const condition = h <= 23 && h >= 0 && m <= 59 && m >= 0 && s <= 59 && s >= 0;
+  if (condition) {
+    return (h * 3600 + m * 60 + s) * 1000;
+  }
+  return -1;
 }
