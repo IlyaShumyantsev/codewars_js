@@ -1,10 +1,15 @@
-//Complete the method/function so that it converts dash/underscore delimited words into camel casing.
-//The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
-//toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
-//toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
-function toCamelCase(str) {
-  var regExp = /[-_]\w/gi;
-  return str.replace(regExp, function (match) {
-    return match.charAt(1).toUpperCase();
+// count X and O
+function XO(str) {
+  let counterX = 0, counterO = 0;
+  [...str].map((item) => {
+    item.toLowerCase() === "x" ? ++counterX : item.toLowerCase() === "o" ? ++counterO : item;
   });
+  return counterO - counterX === 0 ? true : false;
+}
+
+// этот вариант лучше
+function XO2(str) {
+  let x = str.match(/x/gi);
+  let o = str.match(/o/gi);
+  return (x && x.length) === (o && o.length);
 }
