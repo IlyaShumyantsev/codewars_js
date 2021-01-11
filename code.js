@@ -1,10 +1,9 @@
-//Complete the method/function so that it converts dash/underscore delimited words into camel casing.
-//The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
-//toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
-//toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
-function toCamelCase(str) {
-  var regExp = /[-_]\w/gi;
-  return str.replace(regExp, function (match) {
-    return match.charAt(1).toUpperCase();
-  });
+// The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string.
+// Ignore capitalization when determining if a character is a duplicate.
+function duplicateEncode(word) {
+  return word.split("").map(item => {
+    let regExp;
+    item.match(/[[ \ ^ $ . | ? * + ( )]/g) ? regExp = new RegExp(`\\${item}`, "gi") : regExp = new RegExp(item, "gi");
+    return word.match(regExp).length > 1 ? ")" : "("
+  }).join("");
 }
