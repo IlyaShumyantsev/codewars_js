@@ -1,10 +1,12 @@
-//Complete the method/function so that it converts dash/underscore delimited words into camel casing.
-//The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
-//toCamelCase("the-stealth-warrior") // returns "theStealthWarrior"
-//toCamelCase("The_Stealth_Warrior") // returns "TheStealthWarrior"
-function toCamelCase(str) {
-  var regExp = /[-_]\w/gi;
-  return str.replace(regExp, function (match) {
-    return match.charAt(1).toUpperCase();
-  });
+// Write a function called that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
+// "()"              =>  true
+// ")(()))"          =>  false
+// "("               =>  false
+// "(())((()())())"  =>  true
+function validParentheses(str) {
+  let count = 0;
+  return str.split("").reduce((sum, current) => {
+    console.log(sum);
+    return current === "(" ? sum += 1 : current === ")" ? sum -= 1 : sum;
+  }, 0) === 0 ? true : false;
 }
