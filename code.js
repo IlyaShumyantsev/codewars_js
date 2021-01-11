@@ -5,7 +5,6 @@
 // "(())((()())())"  =>  true
 function validParentheses(str) {
   return str.split("").reduce((sum, current) => {
-    console.log(sum);
     return current === "(" ? sum += 1 : current === ")" ? sum -= 1 : sum;
   }, 0) === 0 ? true : false;
 }
