@@ -1,3 +1,15 @@
+// replace A => T, T => A, G => C, C => G
+function DNAStrand(dna) {
+  return [...dna].map((item) => DNAStrand.pairs[item]).join("");
+}
+
+DNAStrand.pairs = {
+  A: "T",
+  T: "A",
+  C: "G",
+  G: "C",
+};
+
 //Complete the solution so that it reverses the string passed into it. 'world'  =>  'dlrow'
 const reverseString = (str) => str.split("").reverse().join("");
 
