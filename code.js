@@ -1,3 +1,15 @@
+// Given an array of integers, find the one that appears an odd number of times.
+// There will always be only one integer that appears an odd number of times.
+function findOdd(A) {
+  const numbers = A.reduce((sum, element) => {
+    sum[element] = (sum[element] || 0) + 1;
+    return sum;
+  }, {});
+  for (const [key, value] of Object.entries(numbers)) {
+    if (value % 2) return Number(key);
+  }
+  return "nothing";
+
 // Write a function called that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
 // "()"              =>  true
 // ")(()))"          =>  false
