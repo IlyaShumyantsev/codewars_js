@@ -6,7 +6,7 @@ function findOdd(A) {
     return sum;
   }, {});
   for (const [key, value] of Object.entries(numbers)) {
-    if (value % 2 !== 0) return Number(key);
+    if (value % 2) return Number(key);
   }
   return "nothing";
 }
