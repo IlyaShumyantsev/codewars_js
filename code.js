@@ -4,7 +4,10 @@
 // "("               =>  false
 // "(())((()())())"  =>  true
 function validParentheses(str) {
-  return str.split("").reduce((sum, current) => {
-    return current === "(" ? sum += 1 : current === ")" ? sum -= 1 : sum;
-  }, 0) === 0 ? true : false;
+  let count = 0;
+  for (let item of str.split("")) {
+    item === "(" ? count += 1 : item === ")" ? count -= 1 : count += 0;
+    if (count < 0) return false;
+  }
+  return !count;
 }
