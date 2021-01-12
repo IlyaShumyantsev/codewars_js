@@ -13,9 +13,11 @@
 // - h = 3, bounce = 0.66, window = 1.5, result is 3
 // - h = 3, bounce = 1, window = 1.5, result is -1 
 // (Condition 2) not fulfilled).
-function bouncingBall(h,  bounce,  window) {
-  if (h > 0 && bounce > 0 && bounce < 1 && window < h) {
-    return h < window ? -1 : 2 + bouncingBall(h * bounce, bounce, window);
+function bouncingBall(height,  bounce,  windowHeight) {
+  const BALL_FALL_DOWN = 1;
+  const BALL_JUMP_UP = 1;
+  if (height > 0 && bounce > 0 && bounce < 1 && windowHeight < height) {
+    return BALL_FALL_DOWN + BALL_JUMP_UP + bouncingBall(height * bounce, bounce, windowHeight);
   }
   return -1;
 }
