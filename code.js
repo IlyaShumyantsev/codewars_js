@@ -1,3 +1,8 @@
+// make negative
+function makeNegative(num) {
+  return num > 0 ? num * -1 : num;
+}
+
 // replace A => T, T => A, G => C, C => G
 function DNAStrand(dna) {
   return [...dna].map((item) => DNAStrand.pairs[item]).join("");
