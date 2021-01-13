@@ -4,6 +4,6 @@ function duplicateEncode(word) {
   return word.split("").map(item => {
     let regExp;
     item.match(/[[ \ ^ $ . | ? * + ( )]/g) ? regExp = new RegExp(`\\${item}`, "gi") : regExp = new RegExp(item, "gi");
-    return word.match(regExp).length > 1 ? ")" : "("
+    return word.match(regExp).length > 1 ? ")" : "(";
   }).join("");
 }
