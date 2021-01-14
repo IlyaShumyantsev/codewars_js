@@ -1,5 +1,6 @@
 // Given an array of integers, find the one that appears an odd number of times.
 // There will always be only one integer that appears an odd number of times.
+
 function findOdd(A) {
   const numbers = A.reduce((sum, element) => {
     sum[element] = (sum[element] || 0) + 1;
@@ -10,3 +11,4 @@ function findOdd(A) {
   }
   return "nothing";
 }
+
