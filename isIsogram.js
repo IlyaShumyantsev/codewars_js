@@ -2,6 +2,8 @@
 // isIsogram("Dermatoglyphics") == true
 // isIsogram("aba") == false
 // isIsogram("moOse") == false // -- ignore letter case
+
 function isIsogram(str) {
   return [...new Set([...str].map((item) => item.toLowerCase()))].length === [...str].length;
 }
+
