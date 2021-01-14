@@ -34,5 +34,3 @@ const suspectInfo = {
 };
 
 const dead = ["Kyle", "Lucas"];
-
-console.log(killer(suspectInfo, dead));
