@@ -1,5 +1,7 @@
-// A pangram is a sentence that contains every single letter of the alphabet at least once. For example, the sentence "The quick brown fox jumps over the lazy dog" is a pangram, because it uses the letters A-Z at least once (case is irrelevant).
-// Given a string, detect whether or not it is a pangram. Return True if it is, False if not. Ignore numbers and punctuation.
-function isPangram(string) {
-  return [...string.replace(/[^\w\s]|_/g, "").replace(/[0-9]/g, '').split(" ")].every((item) => item.length + 1 === 26 ? false : item.length === new Set(item).size);
+// An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+// isIsogram("Dermatoglyphics") == true
+// isIsogram("aba") == false
+// isIsogram("moOse") == false // -- ignore letter case
+function isIsogram(str) {
+  return [...new Set([...str].map((item) => item.toLowerCase()))].length === [...str].length;
 }
