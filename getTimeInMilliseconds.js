@@ -1,5 +1,6 @@
 // Clock shows h hours, m minutes and s seconds after midnight.
 // Your task is to write a function which returns the time since midnight in milliseconds.
+
 function past(h, m, s) {
   const MAX_HOUR = 23, MAX_MINUTES = MAX_SECONDS= 59;
   const MIN_HOUR = MIN_MINUTES = MIN_SECONDS = 0;
@@ -11,3 +12,4 @@ function past(h, m, s) {
   }
   return -1;
 }
+
