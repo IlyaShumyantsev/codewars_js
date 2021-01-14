@@ -19,6 +19,7 @@
 Найдите имя убийцы. В нашем случае это James, так как он единственный, кто видел
 Lucas и Bill.
 */
+
 function killer(suspectInfo, dead) {
   for (let name in suspectInfo) {
     const coincidence = suspectInfo[name].reduce((sum, current) => dead.indexOf(current) !== -1 ? (sum += 1) : sum, 0);
@@ -30,7 +31,8 @@ function killer(suspectInfo, dead) {
 const suspectInfo = {
   James: ["Jacob", "Bill", "Lucas"],
   Johny: ["David", "Kyle", "Lucas"],
-  Peter: ["Lucy", "Kyle"],
+  Peter: ["Lucy", "Kyle"]
 };
 
 const dead = ["Kyle", "Lucas"];
+
