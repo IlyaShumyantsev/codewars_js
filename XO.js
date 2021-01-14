@@ -5,6 +5,7 @@
 // XO("ooxXm") => true
 // XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
 // XO("zzoo") => false
+
 function XO(str) {
   let counterX = 0, counterO = 0;
   [...str].map((item) => {
@@ -13,7 +14,7 @@ function XO(str) {
   return counterO - counterX === 0 ? true : false;
 }
 
-// этот вариант лучше
+// better solution
 function XO2(str) {
   let x = str.match(/x/gi);
   let o = str.match(/o/gi);
