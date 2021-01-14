@@ -3,6 +3,7 @@
 // ")(()))"          =>  false
 // "("               =>  false
 // "(())((()())())"  =>  true
+
 function isValidParentheses(str) {
   let count = 0;
   for (let item of str.split("")) {
@@ -11,3 +12,4 @@ function isValidParentheses(str) {
   }
   return !count;
 }
+
