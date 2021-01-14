@@ -16,6 +16,7 @@
 // 11 -------> '(....())'
 // Once you understand how the numbers are encoded, write a program which encodes a given natural number and return it as a string.
 // Values from 0 to 10000 will be checked
+
 const MAX_PRIME = Math.pow(10, 4);
 
 const getCenter = num => Math.sqrt(num);
@@ -63,3 +64,4 @@ function puzzle(n) {
     
   return `(${res.join("")})`;
 }
+
